@@ -1,0 +1,42 @@
+allprojects {
+    apply plugin: 'project-report'
+}
+
+subprojects {
+    apply plugin: 'groovy'
+
+    repositories {
+        mavenCentral()
+//    maven {
+//        url 'http://repository.springsource.com/maven/bundles/release'
+//    }
+//    maven {
+//        url 'http://repository.springsource.com/maven/bundles/external'
+//    }
+//    maven {
+//        url 'http://repository.springsource.com/maven/libraries/release'
+//    }
+//    maven {
+//        url 'http://repository.springsource.com/maven/libraries/external'
+//    }
+    }
+
+    dependencies {
+        compile     'org.codehaus.groovy:groovy-all:2.2.0'
+        testCompile 'junit:junit:4.11'
+    }
+
+
+//    apply plugin: 'cobertura'
+//    cobertura {
+//        sourceDirs  = sourceSets.main.java.srcDirs
+//        format      = 'html'
+//        includes    = ['**/*.java', '**/*.groovy']
+//        excludes    = []
+//    }
+
+//    test.doFirst {
+//        jvmArgs '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8765'
+//    }
+
+}

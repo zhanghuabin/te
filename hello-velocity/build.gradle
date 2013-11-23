@@ -1,0 +1,7 @@
+dependencies {
+    compile 'org.apache.velocity:velocity:1.7'
+}
+
+//test.doFirst {
+//    jvmArgs '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8765'
+//}

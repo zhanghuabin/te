@@ -1,0 +1,7 @@
+dependencies {
+    compile 'org.antlr:ST4:4.0.7'
+}
+
+//test.doFirst {
+//    jvmArgs '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8765'
+//}

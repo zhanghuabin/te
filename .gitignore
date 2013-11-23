@@ -1,0 +1,16 @@
+.DS_Store
+target
+out
+*.log
+*.class
+work
+.#*
+*.bak
+*~
+build
+doctrees
+.gradle
+.buildinfo
+.idea
+*.iml
+
