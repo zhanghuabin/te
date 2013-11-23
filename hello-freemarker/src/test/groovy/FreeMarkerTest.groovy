@@ -7,8 +7,6 @@
  */
 
 import freemarker.template.Configuration
-import freemarker.template.DefaultObjectWrapper
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -73,17 +71,14 @@ pear for 49RMB. lowok
         ]
     }
 
-    def cfg
-    @Before
-    void setup() {
+    @Test
+    void testTemplate() {
         // initialize fm config
-        cfg = new Configuration().with {
+        def cfg = new Configuration().with {
             setClassForTemplateLoading this.class, 'templates'
             it
         }
-    }
-    @Test
-    void testTemplate() {
+
         // 1, load template
         def ftl = cfg.getTemplate ftlName
 

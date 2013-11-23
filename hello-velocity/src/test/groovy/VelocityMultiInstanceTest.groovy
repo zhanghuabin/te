@@ -9,7 +9,6 @@
 
 import org.apache.velocity.VelocityContext
 import org.apache.velocity.app.VelocityEngine
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -32,21 +31,6 @@ class VelocityMultiInstanceTest {
     static final EXPECTED_STR3 = "Hi, $NAME2, you're old dog."
     static final EXPECTED_STR4 = """apple for 51RMB. high
 pear for 49RMB. low"""
-
-    // VelocityEngine
-    def ve
-    @Before
-    void setup() {
-        ve = new VelocityEngine()
-        this.class.getResource('velocity.conf').withReader {
-            reader ->
-            new Properties().with {
-                load reader
-                it.setProperty 'url.resource.loader.root', thisObject.class.getResource('templates/') as String
-                thisObject.ve.init it
-            }
-        }
-    }
 
     // parameters
     def ctx, vmName, expected
@@ -89,6 +73,15 @@ pear for 49RMB. low"""
 
     @Test
     void testTemplate() {
+        def ve = new VelocityEngine()
+        this.class.getResource('velocity.conf').withReader {
+            reader ->
+                new Properties().with {
+                    load reader
+                    it.setProperty 'url.resource.loader.root', thisObject.class.getResource('templates/') as String
+                    ve.init it
+                }
+        }
         // 1, assemble template & context
         def out = new StringWriter()
         ve.mergeTemplate vmName, ctx, out

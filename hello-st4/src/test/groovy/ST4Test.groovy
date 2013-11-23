@@ -8,7 +8,6 @@
 
 
 import org.antlr.stringtemplate.StringTemplateGroup
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -72,14 +71,10 @@ pear for 49RMB. low
         ]
     }
 
-    def stg
-    @Before
-    void setup() {
-        stg = ['test_group', this.class.getResource('templates').file] as StringTemplateGroup
-    }
-
     @Test
     void testTemplate() {
+        def stg = ['test_group', this.class.getResource('templates').file] as StringTemplateGroup
+
         // 1, load template
         def st = stg.getInstanceOf stName
 
