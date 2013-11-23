@@ -35,7 +35,7 @@ pear for 49RMB. low"""
 
     @BeforeClass
     static void setup() {
-        (VelocitySingletonTest.class.getResource('velocity.conf').file as File).withReader {
+        VelocitySingletonTest.class.getResource('velocity.conf').withReader {
             reader ->
             new Properties().with {
                 load reader

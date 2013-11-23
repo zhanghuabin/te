@@ -79,8 +79,6 @@ pear for 49RMB. lowok
         // initialize fm config
         cfg = new Configuration().with {
             setClassForTemplateLoading this.class, 'templates'
-//            directoryForTemplateLoading = this.class.getResource('templates').file as File
-            objectWrapper = new DefaultObjectWrapper()
             it
         }
     }

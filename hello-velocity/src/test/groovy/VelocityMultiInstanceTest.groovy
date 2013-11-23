@@ -38,7 +38,7 @@ pear for 49RMB. low"""
     @Before
     void setup() {
         ve = new VelocityEngine()
-        (this.class.getResource('velocity.conf').file as File).withReader {
+        this.class.getResource('velocity.conf').withReader {
             reader ->
             new Properties().with {
                 load reader
