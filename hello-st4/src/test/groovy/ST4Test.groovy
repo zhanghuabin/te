@@ -72,7 +72,7 @@ pear for 49RMB. low
         ]
     }
 
-    StringTemplateGroup stg
+    def stg
     @Before
     void setup() {
         stg = ['test_group', this.class.getResource('templates').file] as StringTemplateGroup

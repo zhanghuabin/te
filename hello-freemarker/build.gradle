@@ -2,3 +2,6 @@ dependencies {
     compile 'org.freemarker:freemarker:2.3.+'
 }
 
+//test.doFirst {
+//    jvmArgs '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8765'
+//}
