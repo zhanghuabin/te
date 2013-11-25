@@ -76,11 +76,11 @@ pear for 49RMB. low"""
         def ve = new VelocityEngine()
         this.class.getResource('velocity.conf').withReader {
             reader ->
-                new Properties().with {
-                    load reader
-                    it.setProperty 'url.resource.loader.root', thisObject.class.getResource('templates/') as String
-                    ve.init it
-                }
+            new Properties().with {
+                load reader
+                setProperty 'url.resource.loader.root', thisObject.class.getResource('templates/') as String
+                ve.init it
+            }
         }
         // 1, assemble template & context
         def out = new StringWriter()

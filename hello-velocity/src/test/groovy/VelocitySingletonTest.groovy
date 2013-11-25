@@ -39,7 +39,7 @@ pear for 49RMB. low"""
             reader ->
             new Properties().with {
                 load reader
-                it.setProperty 'url.resource.loader.root', VelocitySingletonTest.class.getResource('templates/') as String
+                setProperty 'url.resource.loader.root', VelocitySingletonTest.class.getResource('templates/') as String
                 Velocity.init it
             }
         }
