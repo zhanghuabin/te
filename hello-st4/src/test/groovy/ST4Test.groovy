@@ -82,7 +82,8 @@ pear for 49RMB. low
         st.attributes = model
 
         // 3, validate result
-        assert expected as String == st as String
+        def converter = {System.getProperty('os.name').toLowerCase().contains('windows') ? it.replace('\r\n', '\n').replace('\n', '\r\n') : it}
+        assert (expected as String).with(converter) == st as String
     }
 
 
