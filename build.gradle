@@ -40,3 +40,11 @@ subprojects {
 //    }
 
 }
+
+ext {
+    expectedGradleVersion = '1.10'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion	= expectedGradleVersion
+}
